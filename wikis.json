@@ -1,0 +1,103 @@
+{
+  "libraries": {
+    "frames": { "name": "Frames", "wiki": "jahirfiquitiva/Frames.wiki" },
+    "kuper": { "name": "Kuper", "wiki": "jahirfiquitiva/Kuper.wiki" },
+    "blueprint": { "name": "Blueprint", "wiki": "jahirfiquitiva/Blueprint.wiki" }
+  },
+  "pages": {
+    "Home": ["frames", "kuper", "blueprint"],
+    "_Sidebar": ["frames", "kuper", "blueprint"],
+    "_Footer": ["frames", "kuper", "blueprint"],
+    "Get-Started": ["frames", "kuper", "blueprint"],
+    "Set-Package-Name": ["frames", "kuper", "blueprint"],
+    "Set-App-Version": ["frames", "kuper", "blueprint"],
+    "Set-App-Name": ["frames", "kuper", "blueprint"],
+    "Set-App-Icon": ["frames", "kuper", "blueprint"],
+    "Set-Launch-Screen-Image": ["frames", "kuper", "blueprint"],
+    "Set-App-Colors": ["frames", "kuper", "blueprint"],
+    "Change-General-Settings": ["frames", "kuper", "blueprint"],
+    "Change-Security-Settings": ["frames", "kuper", "blueprint"],
+    "Add-Credits": ["frames", "kuper", "blueprint"],
+    "Add-Wallpapers": ["frames", "kuper", "blueprint"],
+    "Change-Wallpaper-Settings": ["frames", "kuper", "blueprint"],
+    "Enable-Notifications": ["frames", "kuper", "blueprint"],
+    "Use-Donations": ["frames", "kuper", "blueprint"],
+    "Customize-Styles": ["frames", "kuper", "blueprint"],
+    "Set-Changelog": ["frames", "kuper", "blueprint"],
+    "Add-Kustom-Assets": ["kuper", "blueprint"],
+    "Change-Kustom-Settings": ["kuper", "blueprint"],
+    "Add-Zooper-Widgets": ["kuper", "blueprint"],
+    "Add-Icons": ["blueprint"],
+    "Change-Icon-Settings": ["blueprint"],
+    "Set-Up-Icon-Requests": ["blueprint"],
+    "Customize-Home": ["blueprint"],
+    "Choose-Navigation-Style": ["blueprint"],
+    "Supported-Launchers": ["blueprint"],
+    "Modify-Dashboard-Assets": ["blueprint"]
+  },
+  "moved": {
+    "frames": {
+      "Create-a-Package": ["Set-Package-Name"],
+      "Set-Basic-Values": ["Set-Package-Name", "Set-App-Version"],
+      "Set-App-Colours": ["Set-App-Colors"],
+      "Customise-Styles": ["Customize-Styles"],
+      "How-to-update": ["Update-Frames"]
+    },
+    "kuper": {
+      "Importing-Project": ["Get-Started", "Set-Package-Name"],
+      "Setting-up-your-project----build.gradle": ["Set-Package-Name", "Set-App-Version"],
+      "Setting-up-your-project----AndroidManifest.xml": ["Set-Package-Name", "Use-Donations"],
+      "Setting-up-your---MainActivity.kt": ["Change-Security-Settings", "Set-Package-Name"],
+      "Setting-up-strings.xml": ["Set-App-Name"],
+      "Setting-up-colors.xml": ["Set-App-Colors"],
+      "Changing-app-launcher-and-splash-screen-icons": ["Set-App-Icon", "Set-Launch-Screen-Image"],
+      "Setting-up-kuper_setup.xml": ["Change-Kustom-Settings", "Change-General-Settings"],
+      "Setting-up-frames_setup.xml": ["Change-Wallpaper-Settings"],
+      "Setting-custom-styles": ["Customize-Styles"],
+      "Adding-Zooper-widgets": ["Add-Zooper-Widgets"],
+      "Adding-Kustom-assets": ["Add-Kustom-Assets"],
+      "Setting-up-your-project---about_setup.xml": ["Add-Credits"],
+      "Optimize-your-wallpapers-for-faster-load": ["Add-Wallpapers"],
+      "Setting-up-your-wallpapers-json-file": ["Add-Wallpapers"],
+      "Enabling-notifications": ["Enable-Notifications"],
+      "Setting-app's-changelog": ["Set-Changelog"],
+      "How-to-update": ["Update-Kuper"]
+    },
+    "blueprint": {
+      "Create-a-Package": ["Set-Package-Name"],
+      "Set-Basic-Values": ["Set-Package-Name", "Set-App-Version"],
+      "Set-App-Colours": ["Set-App-Colors"],
+      "Change-Store-&-License-Settings": ["Change-Security-Settings"],
+      "Setting-up-blueprint_setup.xml": ["Change-Icon-Settings", "Set-Up-Icon-Requests", "Change-General-Settings", "Customize-Home"],
+      "Setting-up-extra_configs.xml": ["Customize-Home"],
+      "Setting-up-frames_configs.xml": ["Change-Wallpaper-Settings", "Change-General-Settings"],
+      "Setting-up-frames_setup.xml": ["Change-Wallpaper-Settings"],
+      "Setting-up-kuper_configs.xml": ["Change-Kustom-Settings"],
+      "Setting-up-kuper_setup.xml": ["Change-Kustom-Settings"],
+      "Setting-custom-styles": ["Customize-Styles"],
+      "Adding-Zooper-widgets": ["Add-Zooper-Widgets"],
+      "Adding-Kustom-assets": ["Add-Kustom-Assets"],
+      "Setting-up-your-project---credits_configs.xml": ["Add-Credits"],
+      "Setting-up-your-project-about_setup.xml": ["Add-Credits"],
+      "Optimize-your-wallpapers-for-faster-load": ["Add-Wallpapers"],
+      "Setting-up-your-wallpapers-json-file": ["Add-Wallpapers"],
+      "Enabling-notifications": ["Enable-Notifications"],
+      "Setting-up-icon-pack-(Part-1)": ["Add-Icons"],
+      "Setting-up-icon-pack-(Part-2)": ["Add-Icons"],
+      "How-to-create-an-Icon-Pack": ["Add-Icons"],
+      "How-to-create-and-setup-an-icon-pack": ["Add-Icons"],
+      "Adding-support-for-Smart-Launcher": ["Supported-Launchers"],
+      "Setting-app's-changelog": ["Set-Changelog"],
+      "Enable-Donations": ["Use-Donations"],
+      "Modifying-dashboard-assets": ["Modify-Dashboard-Assets"],
+      "Setting-up-your-project's-AndroidManifest.xml": ["Set-Package-Name", "Use-Donations"],
+      "How-to-update": ["Update-Blueprint"]
+    }
+  },
+  "custom_stubs": {
+    "blueprint": {
+      "Setting-up-Muzei-support": "There's nothing to set up for Muzei anymore: support works out of the box, using your wallpapers. 🎉\n\nTo add wallpapers, see [Add Wallpapers](Add-Wallpapers).\n",
+      "Adding-app-widgets": "Current versions of Blueprint don't include the clock and launcher icon widgets anymore, so there's nothing to set up here.\n\nLooking for home screen widgets? See [Add Kustom Assets](Add-Kustom-Assets).\n"
+    }
+  }
+}

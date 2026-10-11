@@ -1,0 +1,6 @@
+frames/
+kuper/
+blueprint/
+out/
+__pycache__/
+.DS_Store
