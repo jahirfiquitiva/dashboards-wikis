@@ -16,7 +16,7 @@ You don't need to be an Android developer to use it. Most of the setup is editin
 
 The sidebar groups every page by what it's for:
 
-1. **Start here**: get the project running, and set your package name. Do this first.
+1. **Start here**: get the project running, learn how to edit XML files, and set your package name. Do this first.
 2. **Basic setup**: your app's name, icon, colors and main settings. Go through these pages in order.
 <!--only:blueprint-->
 3. **Icon pack**: add your icons and set up icon requests.

@@ -40,5 +40,5 @@ To add a person, add one item to each of the five lists. To remove one, delete t
 
 ## Things to check
 
-- **Photos need a direct link** to the image file, the kind that opens only the image in your browser. Share links from Google Drive or Dropbox open a web page instead, so the photo won't load.
+- **Photos need a direct link** to the image file, the kind that opens only the image in your browser. Share links usually open a web page instead, so the photo won't load. For Google Drive, you can change the link so it works: see [Using Google Drive](Add-Wallpapers#using-google-drive). In this file, write the `&` in that link as `&amp;`.
 - **Buttons and links must match.** If a person has `Website|Instagram`, their links item needs exactly two links, in that order. Otherwise buttons open the wrong page.

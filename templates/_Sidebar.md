@@ -2,7 +2,8 @@
 
 ### Start here
 1. [Get Started](Get-Started)
-2. [Set Package Name](Set-Package-Name)
+2. [Edit XML Files](Edit-XML-Files)
+3. [Set Package Name](Set-Package-Name)
 
 ### Basic setup
 1. [Set App Version](Set-App-Version)

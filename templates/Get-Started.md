@@ -32,6 +32,10 @@ Before changing anything, press the green **Run** button and install the sample 
 
 If it opens, your setup works. If it doesn't, fix that first: problems you run into later are much easier to solve when you know the untouched sample builds fine.
 
+## Before you continue
+
+Most of the setup means editing XML files. If you've never edited one, read [Edit XML Files](Edit-XML-Files) first. It explains the format and the mistakes that break the build.
+
 ## Next step
 
 Set your own package name: [Set Package Name](Set-Package-Name). Do it before anything else, because the other pages assume it's done.

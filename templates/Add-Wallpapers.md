@@ -65,6 +65,43 @@ Some keys also accept other names, in case your JSON already uses them:
 
 That's it. Run the app and your wallpapers should show up. 🖼️
 
+## Using Google Drive
+
+You can host your wallpapers and the JSON file on Google Drive, for free. There's a catch: the link Google Drive gives you opens a web page, not the file, so the app can't use it as it is. You have to change it first.
+
+1. Upload the file to Google Drive.
+2. Right-click it, select **Share**, and under **General access** choose **Anyone with the link**. The app can only load public files.
+3. Click **Copy link**. You get a link like this:
+
+   ```
+   https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+   ```
+
+   `FILE_ID` is a long code that's different for every file, but it's always between `/d/` and `/view`.
+
+4. Put that code in this link instead:
+
+   ```
+   https://drive.google.com/uc?export=download&id=FILE_ID
+   ```
+
+For example:
+
+| Google Drive gives you | You write |
+| --- | --- |
+| `https://drive.google.com/file/d/1aBcD2eFgH3/view?usp=sharing` | `https://drive.google.com/uc?export=download&id=1aBcD2eFgH3` |
+
+Do this for every link: each wallpaper's `url` and `thumbnail`, and the JSON file itself.
+
+> **⚠️ Using a Google Drive link in `json_url`?**
+> `frames_setup.xml` is an XML file, and in XML the `&` in the link has to be written as `&amp;`. Otherwise the build fails:
+>
+> ```xml
+> <string name="json_url">https://drive.google.com/uc?export=download&amp;id=1aBcD2eFgH3</string>
+> ```
+>
+> In the JSON file, write `&` as it is. See [Edit XML Files](Edit-XML-Files#special-characters) for why.
+
 ## Keep wallpapers inside the app (optional)
 
 If you'd rather not host anything online, you can ship the JSON file and the images inside the app. The trade-off: adding wallpapers then needs an app update, and every image makes your app bigger.

@@ -18,6 +18,7 @@
     "_Sidebar": ["frames", "kuper", "blueprint"],
     "_Footer": ["frames", "kuper", "blueprint"],
     "Get-Started": ["frames", "kuper", "blueprint"],
+    "Edit-XML-Files": ["frames", "kuper", "blueprint"],
     "Set-Package-Name": ["frames", "kuper", "blueprint"],
     "Set-App-Version": ["frames", "kuper", "blueprint"],
     "Set-App-Name": ["frames", "kuper", "blueprint"],
