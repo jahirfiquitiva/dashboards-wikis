@@ -18,6 +18,7 @@ The three libraries share most of their setup, so most pages are written once in
 | `scripts/check.py` | Checks the generated pages for broken links and style rules |
 | `scripts/pull.py` | Clones the wiki repos that are missing, and pulls the ones that exist |
 | `scripts/push.py` | Commits and pushes each wiki that changed, after running `check.py` |
+| `scripts/preview.py` | Serves one wiki locally with Gollum, re-rendering it while you edit |
 | `frames/`, `kuper/`, `blueprint/` | Clones of the wiki repos. Ignored by this repo, each one has its own Git history |
 
 ### Template syntax
@@ -51,7 +52,7 @@ It uses SSH. Add `--https` to clone with HTTPS instead.
    python3 scripts/render.py
    ```
 
-4. See what would be committed in each wiki:
+4. Preview a wiki in your browser (see [Previewing](#previewing)), and see what would be committed in each one:
 
    ```bash
    python3 scripts/push.py --dry-run
@@ -72,6 +73,24 @@ It uses SSH. Add `--https` to clone with HTTPS instead.
 `render.py` only writes pages, it never deletes them. If you remove a page from `wikis.json`, delete its file from the wiki clone yourself, or better, add it to `moved` so old links keep working.
 
 To try a change without touching the wiki clones, pass `--out out` to both scripts. `out/` is ignored by Git.
+
+## Previewing
+
+To see a wiki the way GitHub shows it, with the sidebar, the footer and working links between pages, use [Gollum](https://github.com/gollum/gollum). Install it once:
+
+```bash
+gem install gollum
+```
+
+Then preview a wiki:
+
+```bash
+python3 scripts/preview.py frames --watch
+```
+
+Open http://localhost:4567. With `--watch`, every time you save a file in `templates/`, `history/` or `wikis.json`, the wiki is rendered again and `check.py` runs on it. Refresh the browser to see the change. `--port` changes the port.
+
+Gollum only shows committed pages, so the script renders into `out/<lib>`, a separate Git repo ignored by this one, and commits there. Your wiki clones stay untouched, and nothing is pushed.
 
 ### Checking file paths against the samples
 

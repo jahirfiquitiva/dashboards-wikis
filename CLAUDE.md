@@ -9,7 +9,7 @@ Frames is the base library. Kuper builds on Frames and adds Kustom support. Blue
 ## Editing rules
 
 - Edit `templates/`, `history/` and `wikis.json` only. Never edit `frames/`, `kuper/`, `blueprint/` or `out/` directly: they're generated.
-- `frames/`, `kuper/` and `blueprint/` are separate Git repos (the wiki clones), ignored by this one. Never commit or push to them, and never run `scripts/push.py`. You can run `scripts/pull.py` and `scripts/push.py --dry-run`. Generate the pages, run the checks, and leave reviewing, committing and pushing to the maintainer.
+- `frames/`, `kuper/` and `blueprint/` are separate Git repos (the wiki clones), ignored by this one. Never commit or push to them, and never run `scripts/push.py`. You can run `scripts/pull.py`, `scripts/push.py --dry-run` and `scripts/preview.py`. Generate the pages, run the checks, and leave reviewing, committing and pushing to the maintainer.
 - If a page only differs for one library, use an `<!--only:...-->` block inside the shared template instead of creating a separate page.
 - Renaming or deleting a page: add the old name to `moved` in `wikis.json` so it becomes a stub. Old links from READMEs, Discord and blog posts must keep working.
 - A new page needs an entry in `pages` in `wikis.json` and a link in `templates/_Sidebar.md`.

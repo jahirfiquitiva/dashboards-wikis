@@ -38,7 +38,7 @@ def title(page: str) -> str:
     return page.replace("-", " ")
 
 
-def build(out_dir: Path) -> None:
+def build(out_dir: Path, quiet: bool = False) -> None:
     config = json.loads((ROOT / "wikis.json").read_text())
     for lib, info in config["libraries"].items():
         name = info["name"]
@@ -62,7 +62,8 @@ def build(out_dir: Path) -> None:
         target.mkdir(parents=True, exist_ok=True)
         for page, content in pages.items():
             (target / f"{page}.md").write_text(content)
-        print(f"{name}: {len(pages)} pages -> {target}")
+        if not quiet:
+            print(f"{name}: {len(pages)} pages -> {target}")
 
 
 if __name__ == "__main__":

@@ -115,9 +115,11 @@ import com.yourname.yourapp.R
 ```
 
 <!--only:blueprint-->
+
 In the Blueprint sample, `NotificationServiceExtension.kt` imports `dev.jahir.kuper.app.R`. That's wrong for your app too, so change it to your package as well.
 
 <!--/only-->
+
 Leave every other `dev.jahir.` import alone, like `dev.jahir.{{lib}}.ui.activities...`. Those come from the {{Lib}} library itself, not from your app.
 
 > **Note**
@@ -135,25 +137,29 @@ If the app opens, you're done. 🎉
 
 Everything in this table should show your package name:
 
-| Where | What it should say |
-| --- | --- |
-| `buildSrc/src/main/java/MyApp.kt` | `const val appId = "com.yourname.yourapp"` |
-| The folder of your Kotlin files | `app/src/main/kotlin/com/yourname/yourapp/` |
-| First line of each of the 4 files | `package com.yourname.yourapp` |
-| Imports of `R` or `BuildConfig` | None, or `com.yourname.yourapp.R` / `com.yourname.yourapp.BuildConfig` |
+| Where                             | What it should say                                                     |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| `buildSrc/src/main/java/MyApp.kt` | `const val appId = "com.yourname.yourapp"`                             |
+| The folder of your Kotlin files   | `app/src/main/kotlin/com/yourname/yourapp/`                            |
+| First line of each of the 4 files | `package com.yourname.yourapp`                                         |
+| Imports of `R` or `BuildConfig`   | None, or `com.yourname.yourapp.R` / `com.yourname.yourapp.BuildConfig` |
 
 ## Common problems
 
-**"Unresolved reference: BuildConfig" or "Unresolved reference: R"**
-The `package` line of that file doesn't match `appId`, or the file still imports the old package. Go back to steps 4 and 7, then sync again.
+- **"Unresolved reference: BuildConfig" or "Unresolved reference: R"**
 
-**The app installs, but closes as soon as you open it**
-Open **Logcat** at the bottom of Android Studio and look for `ClassNotFoundException`. It means your Kotlin files are in a different package than `appId`. Compare both against the table above.
+  The `package` line of that file doesn't match `appId`, or the file still imports the old package. Go back to steps 4 and 7, then sync again.
 
-**You still see a `dev.jahir.{{lib}}.app` folder**
-The Project panel is probably back in the Android view, or Compact Middle Packages is on. Repeat step 1.
+- **The app installs, but closes as soon as you open it**
+  
+  Open **Logcat** at the bottom of Android Studio and look for `ClassNotFoundException`. It means your Kotlin files are in a different package than `appId`. Compare both against the table above.
 
-**Everything matches the table, but Android Studio still shows errors**
-Android Studio's cache is out of date. Click **File → Invalidate Caches**, check **Clear file system cache and local history**, and click **Invalidate and Restart**.
+- **You still see a `dev.jahir.{{lib}}.app` folder**
+  
+  The Project panel is probably back in the Android view, or Compact Middle Packages is on. Repeat step 1.
+
+- **Everything matches the table, but Android Studio still shows errors**
+  
+  Android Studio's cache is out of date. Click **File → Invalidate Caches**, check **Clear file system cache and local history**, and click **Invalidate and Restart**.
 
 Still stuck? Ask in the [Discord server](https://discord.gg/78h7xgj). Include a screenshot of your Project panel and the error message, so people can help you faster.
