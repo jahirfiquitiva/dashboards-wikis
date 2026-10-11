@@ -17,4 +17,4 @@ class MainActivity : DrawerBlueprintActivity() {
 }
 ```
 
-The bottom bar's labels can be customized in [Customize Styles](Customize-Styles#bottom-navigation-labels). The side menu's header can show your app name and version: see `with_drawer_texts` in [Change Icon Settings](Change-Icon-Settings).
+The bottom bar's labels can be customized in [Customize Styles](Customize-Styles#bottom-navigation-labels). The side menu's header can show your app name and version: see `with_drawer_texts` in [Change Blueprint Settings](Change-Blueprint-Settings).

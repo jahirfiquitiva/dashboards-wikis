@@ -13,7 +13,7 @@ The three libraries share most of their setup, so most pages are written once in
 | `templates/` | One file per page. Shared pages use placeholders and conditional blocks (see below) |
 | `templates/_Update.md` | The intro of each library's update page |
 | `history/<lib>.md` | The list of versions and their required changes, appended to the update page |
-| `wikis.json` | Which pages each wiki gets, and the stubs for renamed pages |
+| `wikis.json` | Which pages each wiki gets (and their name in each wiki, when it differs), and the stubs for renamed pages |
 | `scripts/render.py` | Generates the pages into `frames/`, `kuper/` and `blueprint/` |
 | `scripts/check.py` | Checks the generated pages for broken links and style rules |
 | `scripts/pull.py` | Clones the wiki repos that are missing, and pulls the ones that exist |
@@ -70,7 +70,9 @@ It uses SSH. Add `--https` to clone with HTTPS instead.
 
 `pull.py` and `push.py` take wiki names to limit them to some wikis, like `python3 scripts/push.py blueprint`. `push.py` also takes `-m "message"` for a custom commit message (the default points to this repo's latest commit), and `--yes` to skip the questions.
 
-`render.py` only writes pages, it never deletes them. If you remove a page from `wikis.json`, delete its file from the wiki clone yourself, or better, add it to `moved` so old links keep working.
+`render.py` only writes pages, it never deletes them. It lists the files it didn't generate, so you can spot leftovers. If you remove a page from `wikis.json`, delete its file from the wiki clone yourself, or better, add it to `moved` so old links keep working.
+
+A page can have a different name in each wiki. In `wikis.json`, use a map instead of a list, like `"Change-Kustom-Settings": {"kuper": "Change-Kuper-Settings", "blueprint": "Change-Kustom-Settings"}`. Templates always link to the template name, and `render.py` rewrites those links to each wiki's name.
 
 To try a change without touching the wiki clones, pass `--out out` to both scripts. `out/` is ignored by Git.
 

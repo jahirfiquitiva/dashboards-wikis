@@ -17,7 +17,7 @@
 
 ### Icon pack
 - [Add Icons](Add-Icons)
-- [Change Icon Settings](Change-Icon-Settings)
+- [Change Blueprint Settings](Change-Blueprint-Settings)
 - [Set Up Icon Requests](Set-Up-Icon-Requests)
 - [Customize Home](Customize-Home)
 - [Choose Navigation Style](Choose-Navigation-Style)

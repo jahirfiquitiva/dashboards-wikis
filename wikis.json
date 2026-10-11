@@ -1,8 +1,17 @@
 {
   "libraries": {
-    "frames": { "name": "Frames", "wiki": "jahirfiquitiva/Frames.wiki" },
-    "kuper": { "name": "Kuper", "wiki": "jahirfiquitiva/Kuper.wiki" },
-    "blueprint": { "name": "Blueprint", "wiki": "jahirfiquitiva/Blueprint.wiki" }
+    "frames": {
+      "name": "Frames",
+      "wiki": "jahirfiquitiva/Frames.wiki"
+    },
+    "kuper": {
+      "name": "Kuper",
+      "wiki": "jahirfiquitiva/Kuper.wiki"
+    },
+    "blueprint": {
+      "name": "Blueprint",
+      "wiki": "jahirfiquitiva/Blueprint.wiki"
+    }
   },
   "pages": {
     "Home": ["frames", "kuper", "blueprint"],
@@ -19,16 +28,23 @@
     "Change-Security-Settings": ["frames", "kuper", "blueprint"],
     "Add-Credits": ["frames", "kuper", "blueprint"],
     "Add-Wallpapers": ["frames", "kuper", "blueprint"],
-    "Change-Wallpaper-Settings": ["frames", "kuper", "blueprint"],
+    "Change-Wallpaper-Settings": {
+      "frames": "Change-Frames-Settings",
+      "kuper": "Change-Wallpaper-Settings",
+      "blueprint": "Change-Wallpaper-Settings"
+    },
     "Enable-Notifications": ["frames", "kuper", "blueprint"],
     "Use-Donations": ["frames", "kuper", "blueprint"],
     "Customize-Styles": ["frames", "kuper", "blueprint"],
     "Set-Changelog": ["frames", "kuper", "blueprint"],
     "Add-Kustom-Assets": ["kuper", "blueprint"],
-    "Change-Kustom-Settings": ["kuper", "blueprint"],
+    "Change-Kustom-Settings": {
+      "kuper": "Change-Kuper-Settings",
+      "blueprint": "Change-Kustom-Settings"
+    },
     "Add-Zooper-Widgets": ["kuper", "blueprint"],
     "Add-Icons": ["blueprint"],
-    "Change-Icon-Settings": ["blueprint"],
+    "Change-Blueprint-Settings": ["blueprint"],
     "Set-Up-Icon-Requests": ["blueprint"],
     "Customize-Home": ["blueprint"],
     "Choose-Navigation-Style": ["blueprint"],
@@ -37,6 +53,7 @@
   },
   "moved": {
     "frames": {
+      "Change-Wallpaper-Settings": ["Change-Wallpaper-Settings"],
       "Create-a-Package": ["Set-Package-Name"],
       "Set-Basic-Values": ["Set-Package-Name", "Set-App-Version"],
       "Set-App-Colours": ["Set-App-Colors"],
@@ -68,7 +85,7 @@
       "Set-Basic-Values": ["Set-Package-Name", "Set-App-Version"],
       "Set-App-Colours": ["Set-App-Colors"],
       "Change-Store-&-License-Settings": ["Change-Security-Settings"],
-      "Setting-up-blueprint_setup.xml": ["Change-Icon-Settings", "Set-Up-Icon-Requests", "Change-General-Settings", "Customize-Home"],
+      "Setting-up-blueprint_setup.xml": ["Change-Blueprint-Settings", "Set-Up-Icon-Requests", "Change-General-Settings", "Customize-Home"],
       "Setting-up-extra_configs.xml": ["Customize-Home"],
       "Setting-up-frames_configs.xml": ["Change-Wallpaper-Settings", "Change-General-Settings"],
       "Setting-up-frames_setup.xml": ["Change-Wallpaper-Settings"],

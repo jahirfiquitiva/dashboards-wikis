@@ -84,7 +84,7 @@ This file decides which icons Blueprint shows, and in which categories:
 - Every name in `icon_filters` must have a `string-array` with that exact name. You can create as many categories as you want.
 
 > **Tip**
-> Blueprint can read your icons from `res/xml/drawable.xml` instead of `icon_pack.xml`, so you only have one list to maintain. Turn on `xml_drawable_enabled` in [Change Icon Settings](Change-Icon-Settings).
+> Blueprint can read your icons from `res/xml/drawable.xml` instead of `icon_pack.xml`, so you only have one list to maintain. Turn on `xml_drawable_enabled` in [Change Blueprint Settings](Change-Blueprint-Settings).
 
 ### `docks.xml`
 

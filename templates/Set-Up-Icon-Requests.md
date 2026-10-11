@@ -9,7 +9,7 @@ You can receive requests in two ways:
 - **By email** (default). Blueprint opens the user's email app with a zip file attached, addressed to your `email`.
 - **Through [Pacific Manager](https://pacificmanager.app)**, a request manager. Requests are uploaded there, and you see them all in one place instead of in your inbox.
 
-Either way, set your `email` first (see [Change Icon Settings](Change-Icon-Settings)). Requests don't work without it.
+Either way, set your `email` first (see [Change Blueprint Settings](Change-Blueprint-Settings)). Requests don't work without it.
 
 To use Pacific Manager, create an account there, get your API key, and paste it:
 
