@@ -16,6 +16,8 @@ The three libraries share most of their setup, so most pages are written once in
 | `wikis.json` | Which pages each wiki gets, and the stubs for renamed pages |
 | `scripts/render.py` | Generates the pages into `frames/`, `kuper/` and `blueprint/` |
 | `scripts/check.py` | Checks the generated pages for broken links and style rules |
+| `scripts/pull.py` | Clones the wiki repos that are missing, and pulls the ones that exist |
+| `scripts/push.py` | Commits and pushes each wiki that changed, after running `check.py` |
 | `frames/`, `kuper/`, `blueprint/` | Clones of the wiki repos. Ignored by this repo, each one has its own Git history |
 
 ### Template syntax
@@ -29,34 +31,43 @@ The three libraries share most of their setup, so most pages are written once in
 Clone the three wiki repos inside this folder:
 
 ```bash
-git clone git@github.com:jahirfiquitiva/Frames.wiki.git frames
+python3 scripts/pull.py
 ```
 
-```bash
-git clone git@github.com:jahirfiquitiva/Kuper.wiki.git kuper
-```
-
-```bash
-git clone git@github.com:jahirfiquitiva/Blueprint.wiki.git blueprint
-```
+It uses SSH. Add `--https` to clone with HTTPS instead.
 
 ## Publishing a change
 
 1. Make your change in `templates/`, `history/` or `wikis.json`, and commit it to this repo.
-2. Generate the pages into the wiki clones:
+2. Get the latest version of each wiki, in case someone edited one on GitHub:
+
+   ```bash
+   python3 scripts/pull.py
+   ```
+
+3. Generate the pages into the wiki clones:
 
    ```bash
    python3 scripts/render.py
    ```
 
-3. Check them for broken links and style problems:
+4. See what would be committed in each wiki:
 
    ```bash
-   python3 scripts/check.py
+   python3 scripts/push.py --dry-run
    ```
 
-4. Review what changed in each wiki with `git -C frames diff` (and the same for `kuper` and `blueprint`). Most changes only touch one or two wikis.
-5. Commit and push each wiki that changed.
+   For the full diff of one wiki, run `git -C frames diff` (or `kuper`, `blueprint`).
+
+5. Commit and push:
+
+   ```bash
+   python3 scripts/push.py
+   ```
+
+   It runs `check.py` first and stops if it finds problems. Then, for each wiki that changed, it lists the changed files and asks before committing and pushing. Wikis without changes are skipped.
+
+`pull.py` and `push.py` take wiki names to limit them to some wikis, like `python3 scripts/push.py blueprint`. `push.py` also takes `-m "message"` for a custom commit message (the default points to this repo's latest commit), and `--yes` to skip the questions.
 
 `render.py` only writes pages, it never deletes them. If you remove a page from `wikis.json`, delete its file from the wiki clone yourself, or better, add it to `moved` so old links keep working.
 
