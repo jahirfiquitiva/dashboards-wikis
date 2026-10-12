@@ -18,7 +18,7 @@ For example, if you're on `2.3.0` and the latest is `2.3.7`, apply `2.3.1`, then
 
 Most entries link to a commit, a page on GitHub that shows what changed in each file. It looks like this:
 
-<img src="https://github.com/jahirfiquitiva/Blueprint/assets/10360816/f4045830-7545-4089-9dd8-056cdb07275c" width="720" />
+<img src="https://raw.githubusercontent.com/jahirfiquitiva/dashboards-wikis/main/images/commit-diff-example.webp" width="720" alt="A commit on GitHub, with the changed files on the left, and removed lines in red and added lines in green on the right" />
 
 - **Red** lines were removed. Delete them from your file.
 - **Green** lines were added. Add them to your file.

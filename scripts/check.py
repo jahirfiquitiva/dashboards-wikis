@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
 # Word boundaries so "Dropbox" and "dropdown" don't count
 DROP = re.compile(r"\bdrop(s|ped|ping)?\b", re.I)
+IMAGES_URL = "https://raw.githubusercontent.com/jahirfiquitiva/dashboards-wikis/main/images/"
 OLD_NOTE = re.compile(r"> \*\*(Note|Tip|New to|Why|Need a hand|⚠️)")
 UK_SPELLINGS = ["colour", "customis", "behaviour", "optimis", "licence", "favourite", "organis"]
 # Paths in examples that don't exist in the samples on purpose
@@ -59,6 +60,9 @@ def check(out_dir: Path, samples: Path | None) -> list[str]:
                     problems.append(f"{where}:{number}: old note format, use a GitHub alert like > [!NOTE]")
             if re.search(r"^## Common problems\n\n\*\*", text, re.M):
                 problems.append(f"{where}: 'Common problems' should be a list, like in Set-Package-Name")
+            for image in re.findall(re.escape(IMAGES_URL) + r"([\w.\-]+)", text):
+                if not (ROOT / "images" / image).exists():
+                    problems.append(f"{where}: image '{image}' isn't in images/")
             if "—" in text or "–" in prose:
                 problems.append(f"{where}: em or en dash")
             if DROP.search(prose):

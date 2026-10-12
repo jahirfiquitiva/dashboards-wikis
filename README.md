@@ -16,6 +16,7 @@ The three libraries share most of their setup, so most pages are written once in
 | `templates/` | One file per page. Shared pages use placeholders and conditional blocks (see below) |
 | `templates/_Update.md` | The intro of each library's update page |
 | `history/<lib>.md` | The list of versions and their required changes, appended to the update page |
+| `images/` | Images used in the pages, compressed. Pages link them from this repo on GitHub |
 | `wikis.json` | Which pages each wiki gets (and their name in each wiki, when it differs), and the stubs for renamed pages |
 | `scripts/render.py` | Generates the pages into `frames/`, `kuper/` and `blueprint/` |
 | `scripts/check.py` | Checks the generated pages for broken links and style rules |
@@ -134,6 +135,29 @@ Open http://localhost:4567. With `--watch`, every time you save a file in `templ
 > Gollum doesn't support GitHub alerts (`> [!NOTE]` and the others), so in the preview they show as a plain quote that starts with `[!NOTE]`. GitHub shows them as colored boxes.
 
 Gollum only shows committed pages, so the script renders into `out/<lib>`, a separate Git repo ignored by this one, and commits there. Your wiki clones stay untouched, and nothing is pushed.
+
+## Adding an image
+
+Images live in `images/`, and pages link them from this repo on GitHub, so add the image here instead of uploading it to GitHub.
+
+1. Compress the image to WebP, at twice the width it's shown at in the page, so it stays sharp on high-density screens. For an image shown 720 px wide, using `cwebp` (`brew install webp`):
+
+   ```bash
+   cwebp -resize 1440 0 -q 85 -m 6 screenshot.png -o images/my-image.webp
+   ```
+
+2. Link it with its display width and a description of what it shows:
+
+   ```html
+   <img src="https://raw.githubusercontent.com/jahirfiquitiva/dashboards-wikis/main/images/my-image.webp" width="720" alt="What the image shows" />
+   ```
+
+3. Commit and push this repo **before** pushing the wikis. The image only loads once it's on GitHub.
+
+`check.py` reports links to images that aren't in `images/`.
+
+> [!NOTE]
+> This repo has to be public, or images won't load for people reading the wikis.
 
 ## Checking file paths against the samples
 

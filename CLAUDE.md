@@ -35,6 +35,12 @@ Apply the changes in [this commit](https://github.com/jahirfiquitiva/Kuper/commi
 
 Only add an entry when the version needs changes in users' projects. When a new major version comes out, move the previous major's entries into the `<details>` block at the bottom.
 
+## Images
+
+- Images go in `images/` as WebP, at twice their display width, quality 85. See "Adding an image" in `README.md` for the command.
+- Link them with `https://raw.githubusercontent.com/jahirfiquitiva/dashboards-wikis/main/images/<name>`, with a `width` and an `alt` that describes what the image shows.
+- Never link images uploaded to GitHub issues or comments. They can't be compressed or replaced later.
+
 ## Every page
 
 Readers are often first-time Android developers. Write for someone who has never opened Android Studio.

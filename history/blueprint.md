@@ -52,7 +52,7 @@ Apply the changes in [this commit](https://github.com/jahirfiquitiva/Blueprint/c
 
 Also update the Gradle settings in Android Studio, as shown here:
 
-<img width="512" src="https://user-images.githubusercontent.com/10360816/219970595-19f72a5d-8b5f-4c98-b7f6-502be994ca18.png" />
+<img src="https://raw.githubusercontent.com/jahirfiquitiva/dashboards-wikis/main/images/android-studio-gradle-settings.webp" width="512" alt="Android Studio settings, in Build, Execution, Deployment, Build Tools, Gradle" />
 
 ### v2.3.0
 
