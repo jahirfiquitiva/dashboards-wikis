@@ -133,17 +133,22 @@ This only applies to XML files. In the wallpapers JSON file, write `&` as it is.
 
 The exact error message depends on your version of Android Studio, but it always names the file and the line. Go to that line and look for one of these.
 
-**The error mentions a tag, like "mismatched tag" or "must be terminated"**
-A closing tag is missing, misspelled or doesn't match its opening tag. Check that every `<string ...>` has a `</string>` after it, and the same for every other type.
+- **The error mentions a tag, like "mismatched tag" or "must be terminated"**
 
-**The error mentions an apostrophe**
-A text has an `'` in it. Write it as `\'`, like `Jane\'s Wallpapers`.
+  A closing tag is missing, misspelled or doesn't match its opening tag. Check that every `<string ...>` has a `</string>` after it, and the same for every other type.
 
-**The error says "not well-formed", or mentions `&` or an entity**
-A value, usually a link, has an `&` in it. Write it as `&amp;`.
+- **The error mentions an apostrophe**
 
-**The error mentions "prolog" or "trailing section"**
-There's text before `<resources>` or after `</resources>`, usually a leftover from a paste. Delete it.
+  A text has an `'` in it. Write it as `\'`, like `Jane\'s Wallpapers`.
 
-**No error, but a setting has no effect**
-Check that you didn't change the `name`, that `bool` values are exactly `true` or `false`, and that the setting isn't inside a comment.
+- **The error says "not well-formed", or mentions `&` or an entity**
+
+  A value, usually a link, has an `&` in it. Write it as `&amp;`.
+
+- **The error mentions "prolog" or "trailing section"**
+
+  There's text before `<resources>` or after `</resources>`, usually a leftover from a paste. Delete it.
+
+- **No error, but a setting has no effect**
+
+  Check that you didn't change the `name`, that `bool` values are exactly `true` or `false`, and that the setting isn't inside a comment.

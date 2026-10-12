@@ -33,10 +33,11 @@ Launchers read your icon pack from a set of XML files. Some launchers look for t
 
 When a file is in both folders, it should be **exactly the same** in both. Edit one, then copy it over the other.
 
-> **⚠️ Edit every file marked "Yes"**
+> [!IMPORTANT]
+> **Edit every file marked "Yes"**
 > The sample files have data from a real icon pack. If you leave them as they are, your app will show that pack's info instead of yours.
 
-> **Note**
+> [!NOTE]
 > Some launchers, like Lawnchair, create an "All" category on their own. Don't add an "All" category to `assets/drawable.xml`, or those launchers show it twice.
 
 ## Step 3: Fill in the resource files
@@ -83,7 +84,7 @@ This file decides which icons Blueprint shows, and in which categories:
 - Each item is an icon's file name, without `.png`.
 - Every name in `icon_filters` must have a `string-array` with that exact name. You can create as many categories as you want.
 
-> **Tip**
+> [!TIP]
 > Blueprint can read your icons from `res/xml/drawable.xml` instead of `icon_pack.xml`, so you only have one list to maintain. Turn on `xml_drawable_enabled` in [Change Blueprint Settings](Change-Blueprint-Settings).
 
 ### `docks.xml`

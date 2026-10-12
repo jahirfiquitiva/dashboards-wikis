@@ -1,5 +1,6 @@
 {{Lib}} loads your wallpapers from a JSON file: a small text file that lists each wallpaper's name, image link and other details. You upload the file somewhere online, and {{Lib}} downloads it when the app opens. That way, you can add wallpapers without publishing an app update.
 
+> [!TIP]
 > **New to JSON?**
 > This [short tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) covers everything you need.
 
@@ -51,7 +52,7 @@ Some keys also accept other names, in case your JSON already uses them:
 | `collections` | `categories`, `category` |
 | `dimensions` | `dimension` |
 
-> **Tip**
+> [!TIP]
 > A missing comma or quote breaks the whole file. Paste your JSON into a validator like [JSONLint](https://jsonlint.com/) before uploading it.
 
 ## Step 2: Upload it and connect it
@@ -93,7 +94,8 @@ For example:
 
 Do this for every link: each wallpaper's `url` and `thumbnail`, and the JSON file itself.
 
-> **⚠️ Using a Google Drive link in `json_url`?**
+> [!WARNING]
+> **Using a Google Drive link in `json_url`?**
 > `frames_setup.xml` is an XML file, and in XML the `&` in the link has to be written as `&amp;`. Otherwise the build fails:
 >
 > ```xml

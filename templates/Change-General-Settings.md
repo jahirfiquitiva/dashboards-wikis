@@ -17,7 +17,7 @@ General settings live in `app/src/main/res/values/dashboard_setup.xml`. The defa
 
 Users can change most of these later in the app's settings. These values only decide how the app starts.
 
-> **Tip**
+> [!TIP]
 > Google Play asks for a privacy policy for many apps. If you don't have one yet, a [privacy policy generator](https://app-privacy-policy-generator.firebaseapp.com/) can help you get started.
 
 ## Toolbar logo
@@ -36,6 +36,7 @@ Users can change most of these later in the app's settings. These values only de
        tools:keep="@drawable/my_logo" />
    ```
 
+> [!NOTE]
 > **Why `keep.xml`?**
 > When you build a release, Android removes the images it thinks the app doesn't use. {{Lib}} looks up your logo by its name, so Android can't tell it's being used and removes it. Adding it to `keep.xml` prevents that. Without it, the logo shows in debug builds but disappears in the version you publish.
 <!--/only-->

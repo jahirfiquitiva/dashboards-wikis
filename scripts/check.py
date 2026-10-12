@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
 # Word boundaries so "Dropbox" and "dropdown" don't count
 DROP = re.compile(r"\bdrop(s|ped|ping)?\b", re.I)
+OLD_NOTE = re.compile(r"> \*\*(Note|Tip|New to|Why|Need a hand|⚠️)")
 UK_SPELLINGS = ["colour", "customis", "behaviour", "optimis", "licence", "favourite", "organis"]
 # Paths in examples that don't exist in the samples on purpose
 EXAMPLE_PATH = re.compile(r"yourname|assets/(folder|wallpaper\.jpg|wallpapers\.json)|drawable-nodpi$")
@@ -50,6 +51,14 @@ def check(out_dir: Path, samples: Path | None) -> list[str]:
             for number, line in enumerate(text.split("\n"), 1):
                 if len(EMOJI.findall(line)) > 1:
                     problems.append(f"{where}:{number}: more than one emoji in a line")
+            lines = text.split("\n")
+            for number, line in enumerate(lines, 1):
+                # A bold line right after "> [!TYPE]" is an alert's title, which is fine
+                is_alert_title = number > 1 and lines[number - 2].startswith("> [!")
+                if OLD_NOTE.match(line) and not is_alert_title:
+                    problems.append(f"{where}:{number}: old note format, use a GitHub alert like > [!NOTE]")
+            if re.search(r"^## Common problems\n\n\*\*", text, re.M):
+                problems.append(f"{where}: 'Common problems' should be a list, like in Set-Package-Name")
             if "—" in text or "–" in prose:
                 problems.append(f"{where}: em or en dash")
             if DROP.search(prose):

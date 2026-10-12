@@ -4,6 +4,7 @@ Donations let your users support you with in-app purchases, from inside your app
 
 In the [Google Play Console](https://play.google.com/console), create one in-app product for each donation option, for example a small, a medium and a large donation. Write down each **Product ID**.
 
+> [!TIP]
 > **New to in-app products?**
 > See [Create an in-app product](https://support.google.com/googleplay/android-developer/answer/1153481).
 
@@ -41,7 +42,7 @@ Open `app/src/main/res/values/dashboard_setup.xml` and add each Product ID as an
 
 The IDs must match the ones in the Play Console exactly.
 
-> **Note**
+> [!NOTE]
 > In-app purchases only work for builds installed from Google Play. Upload your app to a testing track (internal testing is the quickest) to try them.
 
 ## Not using donations?

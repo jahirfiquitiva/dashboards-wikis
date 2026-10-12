@@ -6,6 +6,7 @@ Welcome! This page gets the {{Lib}} sample project running on your computer. Eve
 - **An Android phone or emulator** to test your app. Android Studio can create an emulator for you: see [Create and manage virtual devices](https://developer.android.com/studio/run/managing-avds).
 - **A [Google Play developer account](https://play.google.com/console/signup)**, but only when you're ready to publish.
 
+> [!TIP]
 > **New to Android Studio?**
 > The [user guide](https://developer.android.com/studio/intro) explains the basics of the IDE.
 
@@ -23,7 +24,7 @@ You'll get a folder called `{{Lib}}-sample`. Feel free to rename it to your app'
 
 The first time, Android Studio downloads everything the project needs. This can take several minutes. You can follow the progress in the status bar at the bottom of the window.
 
-> **Note**
+> [!IMPORTANT]
 > If Android Studio suggests upgrading the Android Gradle Plugin or other versions, dismiss it. The [Update {{Lib}}](Update-{{Lib}}) page tells you when and how to update them.
 
 ## Step 3: Run the sample

@@ -62,4 +62,17 @@ Readers are often first-time Android developers. Write for someone who has never
   - "handle", "address", "deal with" when you can name the actual action
   - hype words: "awesome", "blazing fast", "game-changer"
   - "simply" and "just" before an instruction that isn't simple for a beginner
-- Notes use `> **Note**` on its own line, then the text on the next line starting with `>`. Warnings that can break the app use `> **⚠️ ...**`.
+- Notes use [GitHub alerts](https://github.com/orgs/community/discussions/16925): `> [!TYPE]` on its own line, then the text on the next lines, each starting with `>`. Pick the type by what the note says:
+  - `[!CAUTION]`: something that can't be undone, like changing the package name after publishing.
+  - `[!WARNING]`: something that breaks the app, or isn't supported.
+  - `[!IMPORTANT]`: a step or rule readers must not skip.
+  - `[!TIP]`: optional help, like "New to JSON?" links.
+  - `[!NOTE]`: anything else.
+  A note that needs a title puts it in bold on the first line after `> [!TYPE]`. Don't add emojis to alerts, they have their own icons.
+- "Common problems" is a list. Each item is the problem in bold, a blank line, then the fix indented by two spaces:
+
+  ```markdown
+  - **"Unresolved reference: R"**
+
+    The `import ... .R` line still points to another package.
+  ```

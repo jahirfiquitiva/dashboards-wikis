@@ -13,6 +13,7 @@ Android Studio can generate every icon size from one image:
 
 Android Studio warns you that some files will be overwritten. That's expected: they're the sample's icons.
 
+> [!TIP]
 > **New to adaptive icons?**
 > The [adaptive icons guide](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive) explains the sizes and safe zones.
 

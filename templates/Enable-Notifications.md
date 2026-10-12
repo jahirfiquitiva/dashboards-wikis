@@ -2,7 +2,7 @@ You can send notifications to your users, for example when you add new wallpaper
 
 This is completely optional. If you don't need notifications, skip this page.
 
-> **Note**
+> [!IMPORTANT]
 > OneSignal collects some data, and you have to declare it in the "Data safety" section of your Play Store listing: your app collects "Device or other IDs". See the [OneSignal documentation](https://documentation.onesignal.com/docs/google-play-data-safety-requirements) and the [Play Console documentation](https://support.google.com/googleplay/android-developer/answer/10787469).
 
 ## Before you start
@@ -107,11 +107,14 @@ The small icon in the status bar comes from `app/src/main/res/drawable/ic_notifi
 
 ## Common problems
 
-**"Unresolved reference: R" in `NotificationServiceExtension.kt`**
-The `import ... .R` line still points to another package. Change it to your package name, as in step 3.
+- **"Unresolved reference: R" in `NotificationServiceExtension.kt`**
 
-**"Unresolved reference: OneSignal"**
-`implementation Libs.oneSignal` in `app/build.gradle` is still commented out, or you didn't sync after removing the `//`.
+  The `import ... .R` line still points to another package. Change it to your package name, as in step 3.
 
-**The test notification never arrives**
-Check that the App ID in `OneSignal.kt` matches the one in your OneSignal dashboard, that you allowed notifications on the device, and that notifications are turned on in the app's settings.
+- **"Unresolved reference: OneSignal"**
+
+  `implementation Libs.oneSignal` in `app/build.gradle` is still commented out, or you didn't sync after removing the `//`.
+
+- **The test notification never arrives**
+
+  Check that the App ID in `OneSignal.kt` matches the one in your OneSignal dashboard, that you allowed notifications on the device, and that notifications are turned on in the app's settings.

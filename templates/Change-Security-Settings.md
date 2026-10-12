@@ -48,5 +48,5 @@ By default, the license checker only runs in release builds, so you can test deb
 
 Keep `destroyChecker()` as the first line of `getLicenseChecker`.
 
-> **Note**
+> [!NOTE]
 > If you see "Unresolved reference: BuildConfig" in this file, your package name isn't set up correctly. See [Set Package Name](Set-Package-Name#common-problems).

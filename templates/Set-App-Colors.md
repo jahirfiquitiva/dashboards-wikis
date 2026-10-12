@@ -28,5 +28,6 @@ On Android 12 and newer, users can turn on Material You, which takes the colors 
 
 If you'd rather show your own colors by default, turn Material You off by default in [Change General Settings](Change-General-Settings). Users can still turn it on in the app's settings.
 
+> [!TIP]
 > **Need a hand picking colors?**
 > The [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) generates a full palette from one color.

@@ -4,7 +4,7 @@ The sample uses `dev.jahir.{{lib}}.app`. You have to change it, because Google P
 
 This is the step people struggle with the most, so it's worth going slowly. Follow the steps in order and your app will build at the end. 💪
 
-> **Note**
+> [!CAUTION]
 > Once you publish your app, you can't change its package name. Google Play treats a new package name as a completely different app.
 
 ## What you're going to change
@@ -59,7 +59,7 @@ You should now see a new folder structure next to `dev`: `kotlin/com/yourname/yo
 3. Drag them onto your new `yourapp` folder.
 4. A **Move** dialog opens. Click **Refactor**.
 
-> **Note**
+> [!IMPORTANT]
 > Move the files inside Android Studio, not with Finder or File Explorer. When Android Studio moves a file, it also updates the `package` line inside it. Your file manager doesn't.
 
 ## Step 4: Check the `package` line
@@ -92,7 +92,7 @@ object MyApp {
 
 While you're here, you can also set your version. See [Set App Version](Set-App-Version).
 
-> **Note**
+> [!NOTE]
 > You don't need to edit `AndroidManifest.xml`. Older versions of this guide asked you to change a `package="..."` line there. Current versions don't have it: the app takes the package name from `appId` automatically.
 
 ## Step 7: Fix leftover imports
@@ -122,7 +122,7 @@ In the Blueprint sample, `NotificationServiceExtension.kt` imports `dev.jahir.ku
 
 Leave every other `dev.jahir.` import alone, like `dev.jahir.{{lib}}.ui.activities...`. Those come from the {{Lib}} library itself, not from your app.
 
-> **Note**
+> [!NOTE]
 > Some of these imports are inside comments, in code that's turned off until you set up notifications. Fix them now anyway, so notifications work later without surprises.
 
 ## Step 8: Sync and build

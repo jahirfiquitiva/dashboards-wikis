@@ -82,7 +82,7 @@ def build(out_dir: Path, quiet: bool = False) -> None:
         target.mkdir(parents=True, exist_ok=True)
         for page, content in pages.items():
             (target / f"{page}.md").write_text(content)
-        for leftover in sorted(set(f.stem for f in target.glob("*.md")) - set(pages)):
+        for leftover in sorted(set(f.stem for f in target.glob("*.md")) - set(pages)) if not quiet else []:
             print(f"{name}: {leftover}.md isn't generated anymore. Delete it, or add it to 'moved' in wikis.json")
         if not quiet:
             print(f"{name}: {len(pages)} pages -> {target}")

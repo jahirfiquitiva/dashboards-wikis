@@ -11,7 +11,7 @@ Styles live in `app/src/main/res/values/styles.xml`. It has these styles:
 
 Their Material You versions, for Android 12 and newer, are in `app/src/main/res/values/m3_styles.xml`. If you change something in one file, make the same change in the other.
 
-> **Note**
+> [!IMPORTANT]
 > Don't change the `parent` of these styles. The app relies on them.
 
 ## Fonts
