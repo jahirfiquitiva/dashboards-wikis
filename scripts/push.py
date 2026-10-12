@@ -1,20 +1,26 @@
 """Commits and pushes the generated pages of each wiki that changed.
 
-Runs check.py first and stops if it finds problems. Shows what changed in each wiki and asks
-before committing and pushing.
+First asks whether to render the pages from templates/ or push what's already in the wiki
+folders. Then runs check.py and stops if it finds problems. Shows what changed in each wiki and
+asks before committing and pushing.
 
 Usage:
     python3 scripts/push.py                       # all wikis
+    python3 scripts/push.py --render              # render first, without asking
+    python3 scripts/push.py --no-render           # push what's there, without asking
     python3 scripts/push.py blueprint             # only this one
     python3 scripts/push.py -m "docs: fix typos"  # custom commit message
     python3 scripts/push.py --dry-run             # only show what would be committed
-    python3 scripts/push.py --yes                 # don't ask before pushing
+    python3 scripts/push.py --yes                 # don't ask anything. Renders first unless
+                                                  # --no-render is passed
 """
 import argparse
 import json
 import subprocess
 import sys
 from pathlib import Path
+
+from render import build
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -82,9 +88,22 @@ if __name__ == "__main__":
     parser.add_argument("-m", "--message")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--yes", action="store_true")
+    render_choice = parser.add_mutually_exclusive_group()
+    render_choice.add_argument("--render", action="store_true", default=None)
+    render_choice.add_argument("--no-render", dest="render", action="store_false")
     args = parser.parse_args()
     if unknown := set(args.libs) - set(config):
         parser.error(f"unknown wiki: {', '.join(sorted(unknown))}")
+
+    should_render = args.render
+    if should_render is None:
+        # Rendering is the safe default: without it, template changes aren't in what gets pushed
+        should_render = args.yes or input(
+            "Render the pages from templates/ first? [Y/n] (n pushes what's already in the wiki folders) "
+        ).strip().lower() in ("", "y", "yes")
+    if should_render:
+        build(ROOT)
+    sys.stdout.flush()
 
     if subprocess.run([sys.executable, str(ROOT / "scripts" / "check.py")]).returncode != 0:
         print("\nFix the problems above before pushing.")

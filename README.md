@@ -66,7 +66,7 @@ It uses SSH. Add `--https` to clone with HTTPS instead.
    python3 scripts/push.py
    ```
 
-   It runs `check.py` first and stops if it finds problems. Then, for each wiki that changed, it lists the changed files and asks before committing and pushing. Wikis without changes are skipped.
+   It first asks whether to render the pages from `templates/` (the default, press Enter) or push what's already in the wiki folders. `--render` and `--no-render` answer that without asking. Then it runs `check.py` and stops if it finds problems. Then, for each wiki that changed, it lists the changed files and asks before committing and pushing. Wikis without changes are skipped.
 
 `pull.py` and `push.py` take wiki names to limit them to some wikis, like `python3 scripts/push.py blueprint`. `push.py` also takes `-m "message"` for a custom commit message (the default points to this repo's latest commit), and `--yes` to skip the questions.
 
