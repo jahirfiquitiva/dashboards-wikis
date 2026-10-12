@@ -78,13 +78,41 @@ To try a change without touching the wiki clones, pass `--out out` to both scrip
 
 ## Previewing
 
-To see a wiki the way GitHub shows it, with the sidebar, the footer and working links between pages, use [Gollum](https://github.com/gollum/gollum). Install it once:
+To see a wiki the way GitHub shows it, with the sidebar, the footer and working links between pages, use [Gollum](https://github.com/gollum/gollum).
+
+### Installing Gollum
+
+You only do this once. These steps are for macOS with [Homebrew](https://brew.sh).
+
+1. Install Ruby. The Ruby that comes with macOS is too old for Gollum:
+
+   ```bash
+   brew install ruby
+   ```
+
+   Homebrew prints how to put this Ruby first in your `PATH`. Follow it, then open a new terminal. `which ruby` should show a path inside `/opt/homebrew`.
+
+2. Install the build tools. Gollum depends on Rugged, which compiles code when it installs, and needs CMake and pkg-config for that:
+
+   ```bash
+   brew install cmake pkgconf
+   ```
+
+3. Install Gollum:
+
+   ```bash
+   gem install gollum
+   ```
+
+`preview.py` finds Gollum even if the folder where gems install their commands isn't on your `PATH`. To also run `gollum` yourself, add that folder to your `PATH`. Ruby tells you where it is:
 
 ```bash
-gem install gollum
+ruby -e 'print Gem.bindir'
 ```
 
-Then preview a wiki:
+If `gem install gollum` fails with "CMake is required" or "pkg-config is required", step 2 is missing. Run it, then run step 3 again.
+
+### Running the preview
 
 ```bash
 python3 scripts/preview.py frames --watch
@@ -92,9 +120,11 @@ python3 scripts/preview.py frames --watch
 
 Open http://localhost:4567. With `--watch`, every time you save a file in `templates/`, `history/` or `wikis.json`, the wiki is rendered again and `check.py` runs on it. Refresh the browser to see the change. `--port` changes the port.
 
+Gollum doesn't support GitHub alerts (`> [!NOTE]` and the others), so in the preview they show as a plain quote that starts with `[!NOTE]`. GitHub shows them as colored boxes.
+
 Gollum only shows committed pages, so the script renders into `out/<lib>`, a separate Git repo ignored by this one, and commits there. Your wiki clones stay untouched, and nothing is pushed.
 
-### Checking file paths against the samples
+## Checking file paths against the samples
 
 To also check that every file path in the docs exists in the sample projects, clone the `sample` branches into one folder (`Frames`, `Kuper`, `Blueprint`) and pass it:
 
