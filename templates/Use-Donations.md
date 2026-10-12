@@ -6,6 +6,7 @@ In the [Google Play Console](https://play.google.com/console), create one in-app
 
 > [!TIP]
 > **New to in-app products?**
+>
 > See [Create an in-app product](https://support.google.com/googleplay/android-developer/answer/1153481).
 
 ## Step 2: Turn on billing

@@ -2,6 +2,7 @@
 
 > [!TIP]
 > **New to JSON?**
+>
 > This [short tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) covers everything you need.
 
 ## Step 1: Write the JSON file
@@ -96,6 +97,7 @@ Do this for every link: each wallpaper's `url` and `thumbnail`, and the JSON fil
 
 > [!WARNING]
 > **Using a Google Drive link in `json_url`?**
+>
 > `frames_setup.xml` is an XML file, and in XML the `&` in the link has to be written as `&amp;`. Otherwise the build fails:
 >
 > ```xml

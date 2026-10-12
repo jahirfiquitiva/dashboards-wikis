@@ -35,6 +35,7 @@ When a file is in both folders, it should be **exactly the same** in both. Edit 
 
 > [!IMPORTANT]
 > **Edit every file marked "Yes"**
+>
 > The sample files have data from a real icon pack. If you leave them as they are, your app will show that pack's info instead of yours.
 
 > [!NOTE]

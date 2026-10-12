@@ -38,6 +38,7 @@ Users can change most of these later in the app's settings. These values only de
 
 > [!NOTE]
 > **Why `keep.xml`?**
+>
 > When you build a release, Android removes the images it thinks the app doesn't use. {{Lib}} looks up your logo by its name, so Android can't tell it's being used and removes it. Adding it to `keep.xml` prevents that. Without it, the logo shows in debug builds but disappears in the version you publish.
 <!--/only-->
 

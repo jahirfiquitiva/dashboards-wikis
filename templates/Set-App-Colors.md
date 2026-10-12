@@ -30,4 +30,5 @@ If you'd rather show your own colors by default, turn Material You off by defaul
 
 > [!TIP]
 > **Need a hand picking colors?**
+>
 > The [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) generates a full palette from one color.

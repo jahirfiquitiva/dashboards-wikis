@@ -46,7 +46,8 @@ Apply the changes in [this commit](https://github.com/jahirfiquitiva/Frames/comm
 
 Apply the changes in [this commit](https://github.com/jahirfiquitiva/Frames/commit/a3231afe975466f9f2cdadef2200d6b911cf702a).
 
-> The new files in assets are just for sample purposes. Feel free to ignore them or not include them.
+> [!NOTE]
+> The new files in `assets` are only samples. You don't need to copy them.
 
 ### v3.5.1
 

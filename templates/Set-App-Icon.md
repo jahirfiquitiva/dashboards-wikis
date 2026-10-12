@@ -15,6 +15,7 @@ Android Studio warns you that some files will be overwritten. That's expected: t
 
 > [!TIP]
 > **New to adaptive icons?**
+>
 > The [adaptive icons guide](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive) explains the sizes and safe zones.
 
 ## The manual way

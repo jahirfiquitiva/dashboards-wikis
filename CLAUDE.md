@@ -68,7 +68,7 @@ Readers are often first-time Android developers. Write for someone who has never
   - `[!IMPORTANT]`: a step or rule readers must not skip.
   - `[!TIP]`: optional help, like "New to JSON?" links.
   - `[!NOTE]`: anything else.
-  A note that needs a title puts it in bold on the first line after `> [!TYPE]`. Don't add emojis to alerts, they have their own icons.
+  A note that needs a title puts it in bold on the first line after `> [!TYPE]`, then an empty `>` line, then the text. Without the empty line, GitHub joins the title and the text into one line. Don't add emojis to alerts, they have their own icons.
 - "Common problems" is a list. Each item is the problem in bold, a blank line, then the fix indented by two spaces:
 
   ```markdown

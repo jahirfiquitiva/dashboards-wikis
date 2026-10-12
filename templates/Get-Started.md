@@ -8,6 +8,7 @@ Welcome! This page gets the {{Lib}} sample project running on your computer. Eve
 
 > [!TIP]
 > **New to Android Studio?**
+>
 > The [user guide](https://developer.android.com/studio/intro) explains the basics of the IDE.
 
 ## Step 1: Download the sample

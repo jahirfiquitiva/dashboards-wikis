@@ -4,7 +4,10 @@ The source of the [Frames](https://github.com/jahirfiquitiva/Frames/wiki), [Kupe
 
 The three libraries share most of their setup, so most pages are written once in `templates/` and generated for each wiki. The pages are generated into clones of the three wiki repos inside this folder, and each wiki is pushed by hand.
 
-> **Don't edit the wikis on GitHub.** The next time the pages are generated, any change made there gets overwritten. Every wiki page links back here in its footer, so open an issue or a pull request in this repo instead.
+> [!WARNING]
+> **Don't edit the wikis on GitHub.**
+> 
+> The next time the pages are generated, any change made there gets overwritten. Every wiki page links back here in its footer, so open an issue or a pull request in this repo instead.
 
 ## How it's organized
 
@@ -70,7 +73,8 @@ It uses SSH. Add `--https` to clone with HTTPS instead.
 
 `pull.py` and `push.py` take wiki names to limit them to some wikis, like `python3 scripts/push.py blueprint`. `push.py` also takes `-m "message"` for a custom commit message (the default points to this repo's latest commit), and `--yes` to skip the questions.
 
-`render.py` only writes pages, it never deletes them. It lists the files it didn't generate, so you can spot leftovers. If you remove a page from `wikis.json`, delete its file from the wiki clone yourself, or better, add it to `moved` so old links keep working.
+> [!IMPORTANT]
+> `render.py` only writes pages, it never deletes them. It lists the files it didn't generate, so you can spot leftovers. If you remove a page from `wikis.json`, delete its file from the wiki clone yourself, or better, add it to `moved` so old links keep working.
 
 A page can have a different name in each wiki. In `wikis.json`, use a map instead of a list, like `"Change-Kustom-Settings": {"kuper": "Change-Kuper-Settings", "blueprint": "Change-Kustom-Settings"}`. Templates always link to the template name, and `render.py` rewrites those links to each wiki's name.
 
@@ -104,13 +108,19 @@ You only do this once. These steps are for macOS with [Homebrew](https://brew.sh
    gem install gollum
    ```
 
-`preview.py` finds Gollum even if the folder where gems install their commands isn't on your `PATH`. To also run `gollum` yourself, add that folder to your `PATH`. Ruby tells you where it is:
+#### Common problems
 
-```bash
-ruby -e 'print Gem.bindir'
-```
+- **`gem install gollum` fails with "CMake is required" or "pkg-config is required"**
 
-If `gem install gollum` fails with "CMake is required" or "pkg-config is required", step 2 is missing. Run it, then run step 3 again.
+  Step 2 is missing. Run it, then run step 3 again.
+
+- **Your terminal says `gollum: command not found`**
+
+  The folder where gems install their commands isn't on your `PATH`. `preview.py` finds Gollum anyway, so you only need to fix this to run `gollum` yourself. Add the folder this command prints to your `PATH`:
+
+  ```bash
+  ruby -e 'print Gem.bindir'
+  ```
 
 ### Running the preview
 
@@ -120,7 +130,8 @@ python3 scripts/preview.py frames --watch
 
 Open http://localhost:4567. With `--watch`, every time you save a file in `templates/`, `history/` or `wikis.json`, the wiki is rendered again and `check.py` runs on it. Refresh the browser to see the change. `--port` changes the port.
 
-Gollum doesn't support GitHub alerts (`> [!NOTE]` and the others), so in the preview they show as a plain quote that starts with `[!NOTE]`. GitHub shows them as colored boxes.
+> [!NOTE]
+> Gollum doesn't support GitHub alerts (`> [!NOTE]` and the others), so in the preview they show as a plain quote that starts with `[!NOTE]`. GitHub shows them as colored boxes.
 
 Gollum only shows committed pages, so the script renders into `out/<lib>`, a separate Git repo ignored by this one, and commits there. Your wiki clones stay untouched, and nothing is pushed.
 

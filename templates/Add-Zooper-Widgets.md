@@ -1,5 +1,6 @@
 > [!WARNING]
 > **Legacy**
+>
 > Current versions of {{Lib}} don't support Zooper widgets: the sample project no longer includes the Zooper folders or the Zooper code. This page is kept only for people maintaining an app on an old version. For new apps, use [Kustom assets](Add-Kustom-Assets) instead.
 
 In old versions, Zooper widgets were set up like this.
