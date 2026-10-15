@@ -37,9 +37,9 @@ The sidebar groups every page by what it's for:
 
 Ready? Start with [Get Started](Get-Started).
 
-## Save time with DashBud
+## Save time with Dashbud
 
-[DashBud](https://dashbud.dev/) is a website that generates some of the setup files for you.
+[Dashbud](https://dashbud.dev/) is a website that generates some of the setup files for you.
 
 <a target="_blank" href="https://dashbud.dev/">
 <img src="https://jahir.dev/share/visit_website.svg?maxAge=432000" width="200"/>

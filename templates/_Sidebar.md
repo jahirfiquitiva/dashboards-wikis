@@ -1,11 +1,13 @@
 ### [Home](Home)
 
 ### Start here
+
 1. [Get Started](Get-Started)
 2. [Edit XML Files](Edit-XML-Files)
 3. [Set Package Name](Set-Package-Name)
 
 ### Basic setup
+
 1. [Set App Version](Set-App-Version)
 2. [Set App Name](Set-App-Name)
 3. [Set App Icon](Set-App-Icon)
@@ -17,6 +19,7 @@
 <!--only:blueprint-->
 
 ### Icon pack
+
 - [Add Icons](Add-Icons)
 - [Change Blueprint Settings](Change-Blueprint-Settings)
 - [Set Up Icon Requests](Set-Up-Icon-Requests)
@@ -27,21 +30,25 @@
 <!--only:kuper-->
 
 ### Kustom
+
 - [Add Kustom Assets](Add-Kustom-Assets)
 - [Change Kustom Settings](Change-Kustom-Settings)
 <!--/only-->
 
 ### Wallpapers
+
 - [Add Wallpapers](Add-Wallpapers)
 - [Change Wallpaper Settings](Change-Wallpaper-Settings)
 <!--only:blueprint-->
 
 ### Kustom
+
 - [Add Kustom Assets](Add-Kustom-Assets)
 - [Change Kustom Settings](Change-Kustom-Settings)
 <!--/only-->
 
 ### Optional
+
 - [Enable Notifications](Enable-Notifications)
 - [Use Donations](Use-Donations)
 - [Customize Styles](Customize-Styles)
@@ -50,14 +57,17 @@
 <!--/only-->
 
 ### Maintenance
+
 - [Set Changelog](Set-Changelog)
 - [Update {{Lib}}](Update-{{Lib}})
 <!--only:kuper,blueprint-->
 
 ### Legacy
+
 - [Add Zooper Widgets](Add-Zooper-Widgets)
 <!--/only-->
 
 ### Help
+
 - [Discord server](https://discord.gg/78h7xgj)
-- [DashBud](https://dashbud.dev/)
+- [Dashbud](https://dashbud.dev/)
